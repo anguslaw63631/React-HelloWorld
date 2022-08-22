@@ -23,8 +23,6 @@ class Clock extends React.Component {
         return (
             <div>
                 <h2>Current Date and Time {this.state.date.toLocaleDateString()}  {this.state.date.toLocaleTimeString()}.</h2>
-
-                <h3>Denpa 今晚食咗飯未</h3>
             </div>
         );
     }
