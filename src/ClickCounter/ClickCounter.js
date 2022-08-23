@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 class ClickCounter extends React.Component {
     constructor(props) {
@@ -16,9 +16,9 @@ class ClickCounter extends React.Component {
     }
 
     componentDidUpdate(props, state) {
-        if (state.overTen == true)
+        if (state.overTen === true)
             this.setState({ overTen: false });
-        if (this.state.count % 10 == 0 && this.state.count > 0 && this.state.count != state.count) {
+        if (this.state.count % 10 === 0 && this.state.count > 0 && this.state.count !== state.count) {
             this.setState({ overTen: true });
             this.setState({ overTenCount: this.state.overTenCount + 1 });
             console.log("10 times Clicked Count",this.state.overTenCount +1 );
