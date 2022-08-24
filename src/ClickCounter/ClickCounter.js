@@ -1,5 +1,6 @@
 import React from "react";
 import OverTenCount from "./OverTenCounter";
+//import "../css/style.css";
 
 class ClickCounter extends React.Component {
     constructor(props) {
@@ -39,12 +40,15 @@ class ClickCounter extends React.Component {
     render() {
         let { count } = this.state;
         return (
-            <div>
-                <h2>You already click the button {count} times</h2>
-
-                <button onClick={() => this.handleClick()}>Click Me</button>
-                <OverTenCount overTen={this.state.overTen} overTenCount={this.state.overTenCount} onReset={()=>this.onReset()}/>
+            <div className="row">
+                <div className="col-6">
+                <h2>{count} times</h2>
                 
+                <button className="btn btn-success" onClick={() => this.handleClick()}>Click Me</button>
+                </div>
+                <div className="col-6">
+                <OverTenCount overTen={this.state.overTen} overTenCount={this.state.overTenCount} onReset={()=>this.onReset()}/>
+                </div>
             </div>
         )
     }
