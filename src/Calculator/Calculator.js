@@ -18,7 +18,7 @@ class Calculator extends React.Component {
     }
 
     reset = () => {
-        this.setState({ current: '0', previous: [], nextIsReset: false });
+        this.setState({ current: '0', previous: [0], nextIsReset: false });
     }
 
     addToCurrent = (symbol) => {
@@ -38,9 +38,9 @@ class Calculator extends React.Component {
     }
 
     calculate = (symbol) => {
-        let { current, previous, nextIsReset } = this.state;
+        let { current, previous } = this.state;
         if (previous.length > 0) {
-            current = eval(String(previous[previous.length - 1] + current));
+            current = (Number.parseInt(previous[previous.length - 1]) + Number.parseInt(current));
             this.setState({ current, previous: [], nextIsReset: true });
         }
     }
