@@ -1,5 +1,4 @@
 import React from "react";
-//import "../css/style.css";
 
 class CalButton extends React.Component {
 
@@ -18,7 +17,6 @@ class CalButton extends React.Component {
             <div className={`col-${this.props.cols}`}>
                 <button className="btn btn-secondary btn-lg w-100" onClick={() => this.props.action(this.props.symbol)}>{this.props.symbol}</button>
             </div>
-
 
         );
     }
