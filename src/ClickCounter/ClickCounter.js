@@ -1,4 +1,5 @@
 import React from "react";
+import OverTenCount from "./OverTenCounter";
 
 class ClickCounter extends React.Component {
     constructor(props) {
@@ -15,6 +16,14 @@ class ClickCounter extends React.Component {
         this.setState({ count: this.state.count + 1 });
     }
 
+    onReset = ()=>{
+        this.setState({
+            count : 0,
+            overTen : false,
+            overTenCount : 0
+        });
+    }
+
     componentDidUpdate(props, state) {
         if (state.overTen === true)
             this.setState({ overTen: false });
@@ -29,15 +38,13 @@ class ClickCounter extends React.Component {
     }
     render() {
         let { count } = this.state;
-        let { overTenCount } = this.state;
         return (
             <div>
                 <h2>You already click the button {count} times</h2>
 
                 <button onClick={() => this.handleClick()}>Click Me</button>
-
-                {(this.state.overTen) ? <h3>You Clicked {overTenCount} X 10 times</h3> : null
-                }
+                <OverTenCount overTen={this.state.overTen} overTenCount={this.state.overTenCount} onReset={()=>this.onReset()}/>
+                
             </div>
         )
     }
