@@ -63,10 +63,10 @@ class Calculator extends React.Component {
                     break;
             }
 
-            if(current == "Infinity"){
+            if(current === "Infinity"){
                 current = "Too Large";
             }
-            if(current == "-Infinity"){
+            if(current === "-Infinity"){
                 current = "Too Small";
             }
 
