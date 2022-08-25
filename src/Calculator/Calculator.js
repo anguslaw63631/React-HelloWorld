@@ -66,11 +66,14 @@ class Calculator extends React.Component {
         return (
             <div className="App">
                 <div className="row">
-                    <div className="col-6">
-                        {this.state.previous.length > 0 ? <input className="input-group-text w-100" type="text" disabled="disabled" value={this.state.previous[this.state.previous.length - 1]} /> : <input className="input-group-text w-100" type="text" disabled="disabled" />}
+                    <div className="col-9"></div>
+                    <div className="col-3">
+                        {this.state.previous.length > 0 ? <h1 className="text-end"  >{this.state.previous[this.state.previous.length - 1]}</h1>  : <h1 className="text-end"  >0</h1> }
                     </div>
-                    <div className="col-6">
-                        <input className="input-group-text w-100" type="text" value={this.state.current} />
+                    </div>
+                    <div className="row">
+                    <div className="col-12">
+                        <h1 className="text-end display-1">{this.state.current} </h1>
                     </div>
                 </div>
                 <div className="row">
